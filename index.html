@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個別セッション｜うのちゃん - 子どものトリセツの先にある、もう一歩</title>
+  <meta name="description" content="鑑定で「この子の性質」がわかったあと、具体的にどう関わるか。この子に合った対応法と声かけを一緒に考える90分の個別セッション＋2週間のチャットサポート。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;600;700&family=Alex+Brush&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink-beige: #fdf5f2;
+      --soft-pink: #f8e1db;
+      --lavender: #eaddf1;
+      --deep-lavender: #9b89b3;
+      --text-main: #5a4a42;
+      --text-light: #7a6a62;
+      --text-muted: #9a8a82;
+      --accent-gold: #c5a059;
+      --primary: #D4856A;
+      --primary-light: #F2D4C8;
+      --primary-dark: #B96B52;
+      --accent-green: #8BAA9A;
+      --accent-green-light: #D5E5DC;
+      --border: #EDE3DB;
+      --gold: #C9A96E;
+      --gold-light: #F5EDDC;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text-main);
+      background-color: var(--pink-beige);
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+
+    h1, h2, h3, h4, .font-serif {
+      font-family: 'Shippori Mincho', serif;
+      line-height: 1.5;
+    }
+
+    .font-script {
+      font-family: 'Alex Brush', cursive;
+    }
+
+    /* アニメーション */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .stagger-item {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .stagger-item.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 水彩風背景 */
+    .bg-watercolor {
+      background: radial-gradient(circle at 10% 20%, rgba(234, 221, 241, 0.4) 0%, transparent 50%),
+                  radial-gradient(circle at 90% 80%, rgba(248, 225, 219, 0.4) 0%, transparent 50%);
+    }
+
+    /* ガラスカード */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 28px;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .glass-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 50px -12px rgba(155, 137, 179, 0.15);
+    }
+
+    /* ボタン */
+    .btn-gradient {
+      background: linear-gradient(135deg, #f8e1db 0%, #eaddf1 100%);
+      transition: all 0.3s ease;
+    }
+    .btn-gradient:hover {
+      transform: scale(1.03);
+      box-shadow: 0 15px 30px rgba(155, 137, 179, 0.2);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 16px rgba(212,133,106,0.3);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(212,133,106,0.4);
+    }
+
+    .btn-green {
+      background: linear-gradient(135deg, var(--accent-green) 0%, #6F9585 100%);
+      color: #fff;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 16px rgba(139,170,154,0.3);
+    }
+    .btn-green:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(139,170,154,0.4);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* セクション装飾 */
+    .section-curve {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.4' d='M0,160L80,176C160,192,320,224,480,213.3C640,203,800,149,960,138.7C1120,128,1280,160,1360,176L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom/cover;
+    }
+
+    /* イントロハイライト */
+    .intro-highlight {
+      background: linear-gradient(135deg, #FFF2EB 0%, var(--primary-light) 100%);
+      border-left: 4px solid var(--primary);
+    }
+
+    /* プロセスライン */
+    .process-line::before {
+      content: "";
+      position: absolute;
+      left: 19px;
+      top: 24px;
+      bottom: 24px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent-green-light), var(--accent-green), var(--accent-green-light));
+    }
+
+    /* FAQ アコーディオン */
+    .faq-item {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .faq-item:hover {
+      box-shadow: 0 8px 24px rgba(155, 137, 179, 0.08);
+    }
+    .faq-item.open {
+      box-shadow: 0 12px 32px rgba(155, 137, 179, 0.12);
+    }
+    .faq-question {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 24px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      transition: background 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .faq-question:hover {
+      background: rgba(248, 225, 219, 0.15);
+    }
+    .faq-q-badge {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Shippori Mincho', serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--accent-green);
+      background: linear-gradient(135deg, var(--accent-green-light) 0%, #E8F0EB 100%);
+    }
+    .faq-toggle {
+      flex-shrink: 0;
+      margin-left: auto;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--pink-beige);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.open .faq-toggle {
+      transform: rotate(180deg);
+    }
+    .faq-toggle svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--text-muted);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1), padding 0.3s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 600px;
+    }
+    .faq-answer-inner {
+      padding: 0 24px 24px 70px;
+      font-size: 0.85rem;
+      line-height: 1.9;
+      color: var(--text-light);
+    }
+
+    /* セッション流れカード */
+    .flow-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .flow-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -12px rgba(155, 137, 179, 0.12);
+    }
+
+    /* 変化カード */
+    .change-item {
+      position: relative;
+      padding-left: 24px;
+    }
+    .change-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-green-light) 100%);
+    }
+
+    @media (max-width: 640px) {
+      .faq-question {
+        padding: 16px 18px;
+        font-size: 0.82rem;
+        gap: 12px;
+      }
+      .faq-answer-inner {
+        padding: 0 18px 20px 18px;
+        font-size: 0.8rem;
+      }
+      .faq-q-badge {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body class="bg-watercolor">
+
+  <!-- ====== Header ====== -->
+  <header class="fixed w-full z-50 px-6 py-4 flex justify-between items-center bg-white/40 backdrop-blur-lg border-b border-white/30">
+    <div class="flex items-center gap-2">
+      <a href="menu_simple.html" class="text-2xl font-serif font-bold tracking-tight" style="color: var(--deep-lavender); text-decoration: none;">うのちゃん</a>
+    </div>
+    <nav class="hidden md:flex gap-10 text-sm font-medium tracking-wider">
+      <a href="menu_simple.html" class="hover:text-pink-400 transition-colors">メニュー</a>
+      <a href="#about" class="hover:text-pink-400 transition-colors">セッションとは</a>
+      <a href="#flow" class="hover:text-pink-400 transition-colors">セッションの流れ</a>
+      <a href="#faq" class="hover:text-pink-400 transition-colors">よくある質問</a>
+      <a href="https://lin.ee/YzQpj1P" target="_blank" class="px-6 py-2 rounded-full btn-gradient text-xs uppercase tracking-widest font-bold shadow-sm">LINEで相談</a>
+    </nav>
+    <button class="md:hidden text-2xl" id="mobile-menu-btn">☰</button>
+  </header>
+
+  <!-- ====== Hero ====== -->
+  <section class="relative min-h-[85vh] flex items-center justify-center pt-20 px-6 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="w-full h-full" style="background: linear-gradient(180deg, #F0F7F3 0%, #E8F0EB 40%, var(--pink-beige) 100%);"></div>
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full opacity-30" style="background: radial-gradient(circle, rgba(213,229,220,0.6) 0%, transparent 60%);"></div>
+    </div>
+    <div class="relative z-10 max-w-3xl text-center">
+      <span class="block font-script text-4xl mb-4 opacity-90 reveal" style="color: var(--accent-green);">One Step Further</span>
+      <div class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center text-4xl reveal" style="background: linear-gradient(135deg, var(--accent-green-light) 0%, #E8F0EB 100%); box-shadow: 0 4px 16px rgba(139,170,154,0.15); transition-delay: 0.1s;">
+        💬
+      </div>
+      <h1 class="text-3xl md:text-5xl font-serif font-bold leading-tight mb-6 reveal" style="transition-delay: 0.2s;">
+        個別セッション
+      </h1>
+      <p class="text-base md:text-lg mb-4 leading-relaxed reveal font-medium" style="transition-delay: 0.4s;">
+        <span class="font-bold" style="color: var(--accent-green); background: linear-gradient(transparent 60%, rgba(213,229,220,0.4) 60%); padding: 0 2px;">鑑定の先にある、もう一歩。</span>
+      </p>
+      <p class="text-sm md:text-base mb-10 leading-relaxed reveal" style="color: var(--text-light); transition-delay: 0.5s;">
+        「この子の性質はわかった。<br>
+        じゃあ、具体的にどう関わればいいの？」<br>
+        そう感じたママのためのセッションです。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal" style="transition-delay: 0.6s;">
+        <a href="https://lin.ee/YzQpj1P" target="_blank" class="px-10 py-4 rounded-full btn-green font-bold text-base shadow-xl">
+          LINEでセッションについて聞く
+        </a>
+        <a href="#about" class="px-10 py-4 rounded-full bg-white font-bold text-base border border-gray-100 shadow-lg hover:bg-gray-50 transition-all flex items-center justify-center gap-2" style="color: var(--text-light);">
+          詳しく見る
+        </a>
+      </div>
+    </div>
+    <div class="section-curve"></div>
+  </section>
+
+  <!-- ====== こんなお気持ちありませんか？ ====== -->
+  <section class="py-20 px-6" style="background: var(--pink-beige);">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <span class="font-script text-3xl block mb-2" style="color: var(--accent-green);">For You</span>
+        <h2 class="text-2xl md:text-3xl font-serif font-bold">こんなお気持ちありませんか？</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+        <div class="p-6 rounded-2xl bg-white/60 border border-white/50 stagger-item">
+          <p class="text-sm">鑑定で性質はわかった。<br>でも、いざとなると実践できない</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/60 border border-white/50 stagger-item">
+          <p class="text-sm">頭ではわかっているのに、<br>つい声を荒げてしまう</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/60 border border-white/50 stagger-item">
+          <p class="text-sm">「この子にはどう関わるのが正解？」<br>具体的な答えがほしい</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/60 border border-white/50 stagger-item">
+          <p class="text-sm">怒鳴って → 自己嫌悪 → また怒鳴る<br>のループから抜け出したい</p>
+        </div>
+      </div>
+      <div class="text-center reveal">
+        <p class="text-base md:text-lg font-serif leading-relaxed mb-4">
+          トリセツは<strong style="color: var(--accent-green);">"地図"</strong>。<br>
+          セッションは<strong style="color: var(--accent-green);">"ナビ"</strong>です。
+        </p>
+        <p class="text-sm leading-loose mb-4" style="color: var(--text-light);">
+          地図を見て全体像はわかった。<br>
+          でも、実際に走り出すにはナビが必要——<br>
+          セッションでは、あなた専用のナビをお渡しします。
+        </p>
+        <div class="w-16 h-px mx-auto" style="background: var(--accent-green-light);"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 個別セッションとは ====== -->
+  <section id="about" class="py-20 px-6 bg-white">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-4 reveal">
+        <span class="font-script text-3xl block mb-2" style="color: var(--accent-green);">About Session</span>
+        <h2 class="text-2xl md:text-3xl font-serif font-bold mb-4">個別セッションとは</h2>
+      </div>
+
+      <div class="glass-card p-8 md:p-10 reveal" style="transition-delay: 0.2s; position: relative; overflow: hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg, var(--accent-green-light), var(--accent-green), var(--accent-green-light));border-radius:28px 28px 0 0;"></div>
+
+        <p class="text-sm md:text-base leading-loose mb-6 text-center" style="color: var(--text-light);">
+          お子さんの鑑定書（トリセツ）をもとに、<br>
+          <strong style="color: var(--text-main);">「この子に合った具体的な関わり方」</strong>を<br>
+          一緒に考えるセッションです。<br>
+          言わば、<strong style="color: var(--text-main);">子育ての"作戦会議"</strong>です。
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+          <div class="p-5 rounded-xl text-center" style="background: linear-gradient(135deg, var(--accent-green-light) 0%, #E8F0EB 100%);">
+            <div class="text-2xl mb-2">🎙</div>
+            <p class="text-xs font-bold mb-1">90分の個別セッション</p>
+            <p class="text-[11px]" style="color: var(--text-light);">Google Meet（オンライン）</p>
+          </div>
+          <div class="p-5 rounded-xl text-center" style="background: linear-gradient(135deg, var(--primary-light) 0%, #FDE8DE 100%);">
+            <div class="text-2xl mb-2">💌</div>
+            <p class="text-xs font-bold mb-1">2週間のチャットサポート</p>
+            <p class="text-[11px]" style="color: var(--text-light);">LINE（回数無制限）</p>
+          </div>
+        </div>
+
+        <div class="intro-highlight rounded-xl p-5 text-sm leading-loose">
+          トリセツで「この子の性質」はわかった。<br>
+          でも、目の前の場面で「じゃあどうする？」は<br>
+          ひとりで考えるには限界があります。<br><br>
+          <strong>鑑定書の内容をベースに、<br>この子に合った具体的な対応法を一緒に考えます。</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== セッションで届けること ====== -->
+  <section class="py-20 px-6" style="background: linear-gradient(180deg, var(--pink-beige) 0%, #F0F7F3 50%, var(--pink-beige) 100%);">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <span class="font-script text-3xl block mb-2" style="color: var(--accent-green);">What You'll Get</span>
+        <h2 class="text-2xl md:text-3xl font-serif font-bold mb-3">セッションで届けること</h2>
+        <p class="text-sm" style="color: var(--text-muted);">鑑定では届けきれない「具体策」を、対話を通じてお届けします</p>
+      </div>
+
+      <div class="space-y-5">
+
+        <div class="flow-card stagger-item">
+          <div class="p-6 md:p-8">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg" style="background: linear-gradient(135deg, var(--accent-green-light) 0%, #E8F0EB 100%);">1</div>
+              <div>
+                <h4 class="font-bold text-sm mb-2">大人の"普通"と子どもの"普通"</h4>
+                <p class="text-xs leading-loose" style="color: var(--text-light);">
+                  子育てに万人共通の正解はありません。<br>
+                  大人が思う「普通」と、子どもにとっての「普通」は違います。<br>
+                  この子の性質を軸に、「うちの子の普通」を一緒に整理していきます。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-card stagger-item">
+          <div class="p-6 md:p-8">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg" style="background: linear-gradient(135deg, var(--accent-green-light) 0%, #E8F0EB 100%);">2</div>
+              <div>
+                <h4 class="font-bold text-sm mb-2">「こうあるべき」をやわらかくする</h4>
+                <p class="text-xs leading-loose" style="color: var(--text-light);">
+                  「ちゃんとさせなきゃ」「普通はこうでしょ」——<br>
+                  つい湧いてくる"べき思考"をやわらかくほぐしていきます。<br>
+                  考え方が少し変わるだけで、同じ場面でもラクに対応できるようになります。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-card stagger-item">
+          <div class="p-6 md:p-8">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg" style="background: linear-gradient(135deg, var(--accent-green-light) 0%, #E8F0EB 100%);">3</div>
+              <div>
+                <h4 class="font-bold text-sm mb-2">子どもの自己肯定感を育てるには</h4>
+                <p class="text-xs leading-loose" style="color: var(--text-light);">
+                  子どもの自己肯定感は、日々の関わり方の中で育まれます。<br>
+                  この子の性質に合った「認め方」「褒め方」のコツをお伝えします。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-card stagger-item">
+          <div class="p-6 md:p-8">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg" style="background: linear-gradient(135deg, var(--accent-green-light) 0%, #E8F0EB 100%);">4</div>
+              <div>
+                <h4 class="font-bold text-sm mb-2">具体的に何から始めるか</h4>
+                <p class="text-xs leading-loose" style="color: var(--text-light);">
+                  この子の性質に合わせた「今日からできること」を一緒に決めます。<br>
+                  声かけの具体例、日常の仕組み化など、すぐに使えるプランをお渡しします。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-card stagger-item">
+          <div class="p-6 md:p-8">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg" style="background: linear-gradient(135deg, var(--accent-green-light) 0%, #E8F0EB 100%);">5</div>
+              <div>
+                <h4 class="font-bold text-sm mb-2">ポジティブな視点の身につけ方</h4>
+                <p class="text-xs leading-loose" style="color: var(--text-light);">
+                  「短所」を「性質」に変換し、さらに「長所」として見る練習をします。<br>
+                  鑑定書を使った"見方の練習"で、日常の見え方が変わっていきます。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-card stagger-item">
+          <div class="p-6 md:p-8">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg" style="background: linear-gradient(135deg, var(--accent-green-light) 0%, #E8F0EB 100%);">6</div>
+              <div>
+                <h4 class="font-bold text-sm mb-2">どんな変化が実感できるか</h4>
+                <p class="text-xs leading-loose" style="color: var(--text-light);">
+                  「子どもが変わる」のではなく「自分の見方が変わる → 子どもの反応が変わる」。<br>
+                  1週間・1ヶ月・3ヶ月の変化のイメージをお伝えします。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-card stagger-item">
+          <div class="p-6 md:p-8">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg" style="background: linear-gradient(135deg, var(--accent-green-light) 0%, #E8F0EB 100%);">7</div>
+              <div>
+                <h4 class="font-bold text-sm mb-2">日々の子育てを続けるコツ</h4>
+                <p class="text-xs leading-loose" style="color: var(--text-light);">
+                  完璧にやろうとしなくて大丈夫。<br>
+                  日々の"小さな成功体験"の積み上げ方と、チャットサポートの活用法をお伝えします。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== セッションの流れ ====== -->
+  <section id="flow" class="py-20 px-6 bg-white">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <span class="font-script text-3xl block mb-2" style="color: var(--accent-green);">Session Flow</span>
+        <h2 class="text-2xl md:text-3xl font-serif font-bold mb-3">セッションの流れ</h2>
+        <p class="text-sm" style="color: var(--text-muted);">90分を3つのパートに分けて進めます</p>
+      </div>
+
+      <!-- 前半 -->
+      <div class="mb-8 reveal">
+        <div class="flow-card overflow-hidden">
+          <div class="p-4 text-center" style="background: linear-gradient(135deg, var(--primary-light) 0%, #FDE8DE 100%);">
+            <span class="text-[10px] tracking-[0.2em] uppercase font-bold" style="color: var(--primary-dark);">Part 1</span>
+            <h3 class="text-base font-serif font-bold">ヒアリング＋状況の整理</h3>
+            <span class="text-xs" style="color: var(--text-muted);">前半 40分</span>
+          </div>
+          <div class="p-6 md:p-8">
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3 text-sm">
+                <span class="mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-[9px] font-bold" style="background: var(--primary-light); border: 2px solid var(--primary); color: var(--primary);">✓</span>
+                <div>
+                  <strong>今の困りごとをお聞かせください</strong><br>
+                  <span class="text-xs" style="color: var(--text-light);">お子さんとの日常で困っていること、気になっていることを詳しくお聞きします</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-[9px] font-bold" style="background: var(--primary-light); border: 2px solid var(--primary); color: var(--primary);">✓</span>
+                <div>
+                  <strong>鑑定書をもとに、状況を整理</strong><br>
+                  <span class="text-xs" style="color: var(--text-light);">お子さんの性質と今の困りごとがどうつながっているかを一緒に見ていきます</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-[9px] font-bold" style="background: var(--primary-light); border: 2px solid var(--primary); color: var(--primary);">✓</span>
+                <div>
+                  <strong>「こうあるべき」の見直し</strong><br>
+                  <span class="text-xs" style="color: var(--text-light);">つい持ってしまう"べき思考"をやわらかくほぐし、気持ちを整理します</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 中盤 -->
+      <div class="mb-8 reveal" style="transition-delay: 0.15s;">
+        <div class="flow-card overflow-hidden">
+          <div class="p-4 text-center" style="background: linear-gradient(135deg, var(--accent-green-light) 0%, #E8F0EB 100%);">
+            <span class="text-[10px] tracking-[0.2em] uppercase font-bold" style="color: #6F9585;">Part 2</span>
+            <h3 class="text-base font-serif font-bold">子どもの性質 × 困りごと解決</h3>
+            <span class="text-xs" style="color: var(--text-muted);">中盤 30分</span>
+          </div>
+          <div class="p-6 md:p-8">
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3 text-sm">
+                <span class="mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-[9px] font-bold" style="background: var(--accent-green-light); border: 2px solid var(--accent-green); color: var(--accent-green);">✓</span>
+                <div>
+                  <strong>鑑定書をもとに、性質のおさらい</strong><br>
+                  <span class="text-xs" style="color: var(--text-light);">トリセツの内容を一緒に振り返りながら、ポイントを深掘りします</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-[9px] font-bold" style="background: var(--accent-green-light); border: 2px solid var(--accent-green); color: var(--accent-green);">✓</span>
+                <div>
+                  <strong>この子の性質に合った具体的な対応法</strong><br>
+                  <span class="text-xs" style="color: var(--text-light);">今の困りごとに対して「この子の場合はこうする」をお伝えします</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-[9px] font-bold" style="background: var(--accent-green-light); border: 2px solid var(--accent-green); color: var(--accent-green);">✓</span>
+                <div>
+                  <strong>NG声かけ → OK声かけの実践</strong><br>
+                  <span class="text-xs" style="color: var(--text-light);">実際の場面を想定して、声かけを一緒に練習します</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 後半 -->
+      <div class="mb-8 reveal" style="transition-delay: 0.3s;">
+        <div class="flow-card overflow-hidden">
+          <div class="p-4 text-center" style="background: linear-gradient(135deg, var(--lavender) 0%, #F0EAF5 100%);">
+            <span class="text-[10px] tracking-[0.2em] uppercase font-bold" style="color: var(--deep-lavender);">Part 3</span>
+            <h3 class="text-base font-serif font-bold">行動プランとまとめ</h3>
+            <span class="text-xs" style="color: var(--text-muted);">後半 20分</span>
+          </div>
+          <div class="p-6 md:p-8">
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3 text-sm">
+                <span class="mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-[9px] font-bold" style="background: var(--lavender); border: 2px solid var(--deep-lavender); color: var(--deep-lavender);">✓</span>
+                <div>
+                  <strong>「今日から始める3つのこと」を一緒に決める</strong><br>
+                  <span class="text-xs" style="color: var(--text-light);">セッション内容をもとに、無理なく始められるアクションを決めます</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-[9px] font-bold" style="background: var(--lavender); border: 2px solid var(--deep-lavender); color: var(--deep-lavender);">✓</span>
+                <div>
+                  <strong>変化のロードマップ</strong><br>
+                  <span class="text-xs" style="color: var(--text-light);">1週間・1ヶ月・3ヶ月でどんな変化が起きるか、見通しをお伝えします</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-[9px] font-bold" style="background: var(--lavender); border: 2px solid var(--deep-lavender); color: var(--deep-lavender);">✓</span>
+                <div>
+                  <strong>チャットサポートの使い方説明</strong><br>
+                  <span class="text-xs" style="color: var(--text-light);">セッション後の2週間サポートの活用法をお伝えします</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 2週間チャットサポート ====== -->
+  <section class="py-20 px-6" style="background: linear-gradient(180deg, var(--pink-beige) 0%, #F5F0EB 50%, var(--pink-beige) 100%);">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-8 reveal">
+        <span class="font-script text-3xl block mb-2" style="color: var(--accent-green);">Chat Support</span>
+        <h2 class="text-xl md:text-2xl font-serif font-bold">セッション後も安心の<br class="sm:hidden">2週間チャットサポート</h2>
+      </div>
+
+      <div class="glass-card p-8 md:p-10 reveal" style="transition-delay: 0.2s; position: relative; overflow: hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg, var(--accent-green-light), var(--accent-green), var(--accent-green-light));border-radius:28px 28px 0 0;"></div>
+
+        <p class="text-sm leading-loose text-center mb-8" style="color: var(--text-light);">
+          セッションで決めた行動プランを<br>
+          実際にやってみると、新たな疑問や迷いが出てくるものです。<br>
+          <strong style="color: var(--text-main);">その"やってみたけど…"を、そのまま放置しません。</strong>
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div class="p-5 rounded-xl" style="background: linear-gradient(135deg, #F0F7F3 0%, var(--accent-green-light) 100%);">
+            <p class="text-xs font-bold mb-1" style="color: var(--accent-green);">期間</p>
+            <p class="text-sm font-bold">セッション後 2週間</p>
+          </div>
+          <div class="p-5 rounded-xl" style="background: linear-gradient(135deg, #F0F7F3 0%, var(--accent-green-light) 100%);">
+            <p class="text-xs font-bold mb-1" style="color: var(--accent-green);">形式</p>
+            <p class="text-sm font-bold">LINE（回数無制限）</p>
+          </div>
+        </div>
+
+        <p class="text-xs text-center mb-6" style="color: var(--text-muted);">
+          ※ 時間帯によっては即時返信が難しい場合がございます。基本的に24時間以内にお返事いたします。
+        </p>
+
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-start gap-3 text-sm">
+            <span class="text-base mt-0.5 flex-shrink-0" style="color: var(--accent-green);">✦</span>
+            <span>行動プランの実践報告・質問・困りごと相談</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm">
+            <span class="text-base mt-0.5 flex-shrink-0" style="color: var(--accent-green);">✦</span>
+            <span>性質ベースのアドバイス、声かけ例の微調整</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm">
+            <span class="text-base mt-0.5 flex-shrink-0" style="color: var(--accent-green);">✦</span>
+            <span>「できた！」の報告を受け止めて、成功体験を強化</span>
+          </li>
+        </ul>
+
+        <div class="intro-highlight rounded-xl p-5 text-sm leading-loose">
+          2週間のサポートを通じて、<br>
+          <strong>"自分でできる"状態</strong>に持っていきます。<br>
+          セッション後も、ひとりじゃありません。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 鑑定とセッションの違い ====== -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <span class="font-script text-3xl block mb-2" style="color: var(--accent-green);">Comparison</span>
+        <h2 class="text-xl md:text-2xl font-serif font-bold">鑑定とセッション、何が違うの？</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal" style="transition-delay: 0.2s;">
+        <!-- 鑑定 -->
+        <div class="flow-card p-6 md:p-8">
+          <div class="text-center mb-5">
+            <div class="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center text-xl" style="background: linear-gradient(135deg, var(--primary-light) 0%, #FDE8DE 100%);">🌱</div>
+            <h4 class="font-bold font-serif text-sm">鑑定（トリセツ）</h4>
+            <p class="text-[10px] mt-1" style="color: var(--text-muted);">= 地図</p>
+          </div>
+          <ul class="space-y-3">
+            <li class="change-item text-xs leading-relaxed" style="color: var(--text-light);">
+              この子の<strong style="color: var(--text-main);">性質</strong>がわかる
+            </li>
+            <li class="change-item text-xs leading-relaxed" style="color: var(--text-light);">
+              「こういう子なんだ」と<strong style="color: var(--text-main);">安心</strong>する
+            </li>
+            <li class="change-item text-xs leading-relaxed" style="color: var(--text-light);">
+              <strong style="color: var(--text-main);">子どもを理解</strong>する
+            </li>
+          </ul>
+        </div>
+
+        <!-- セッション -->
+        <div class="flow-card p-6 md:p-8" style="border: 2px solid rgba(139,170,154,0.3);">
+          <div class="text-center mb-5">
+            <div class="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center text-xl" style="background: linear-gradient(135deg, var(--accent-green-light) 0%, #E8F0EB 100%);">💬</div>
+            <h4 class="font-bold font-serif text-sm">個別セッション</h4>
+            <p class="text-[10px] mt-1" style="color: var(--text-muted);">= ナビ</p>
+          </div>
+          <ul class="space-y-3">
+            <li class="change-item text-xs leading-relaxed" style="color: var(--text-light);">
+              この子への<strong style="color: var(--text-main);">具体的な関わり方</strong>がわかる
+            </li>
+            <li class="change-item text-xs leading-relaxed" style="color: var(--text-light);">
+              「こうすればいいんだ」と<strong style="color: var(--text-main);">行動</strong>できる
+            </li>
+            <li class="change-item text-xs leading-relaxed" style="color: var(--text-light);">
+              子どもを理解した上で、<strong style="color: var(--text-main);">関わり方が変わる</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== こんな変化が期待できます ====== -->
+  <section class="py-20 px-6" style="background: var(--pink-beige);">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <span class="font-script text-3xl block mb-2" style="color: var(--accent-green);">Changes</span>
+        <h2 class="text-xl md:text-2xl font-serif font-bold">セッション後に感じる変化</h2>
+      </div>
+
+      <div class="glass-card p-8 md:p-10 reveal" style="transition-delay: 0.2s; position: relative; overflow: hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg, var(--accent-green-light), var(--accent-green), var(--accent-green-light));border-radius:28px 28px 0 0;"></div>
+
+        <div class="space-y-6">
+          <div class="p-5 rounded-xl" style="background: linear-gradient(135deg, #F0F7F3 0%, var(--accent-green-light) 100%);">
+            <p class="text-xs font-bold mb-2" style="color: var(--accent-green);">1週間後</p>
+            <p class="text-sm leading-relaxed">
+              声かけの仕方が少し変わり、<br>
+              <strong>子どもの反応に「あ、違う」と気づく瞬間</strong>が生まれます。
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl" style="background: linear-gradient(135deg, var(--primary-light) 0%, #FDE8DE 100%);">
+            <p class="text-xs font-bold mb-2" style="color: var(--primary-dark);">1ヶ月後</p>
+            <p class="text-sm leading-relaxed">
+              イライラする場面が減り、<br>
+              <strong>「怒鳴らなくて済んだ」という日</strong>が増えていきます。
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl" style="background: linear-gradient(135deg, var(--lavender) 0%, #F0EAF5 100%);">
+            <p class="text-xs font-bold mb-2" style="color: var(--deep-lavender);">3ヶ月後</p>
+            <p class="text-sm leading-relaxed">
+              子育てが「つらいもの」から<br>
+              <strong>「この子と過ごす時間が愛おしい」</strong>に変わっていきます。
+            </p>
+          </div>
+        </div>
+
+        <p class="text-center mt-8 text-xs leading-loose" style="color: var(--text-muted);">
+          「子どもが変わる」のではなく、<br>
+          「自分の見方が変わる → 子どもの反応が変わる」。<br>
+          この順番が、いちばん大切です。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== お申し込みの流れ ====== -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <span class="font-script text-3xl block mb-2" style="color: var(--accent-green);">How to Apply</span>
+        <h2 class="text-2xl md:text-3xl font-serif font-bold">お申し込みの流れ</h2>
+      </div>
+
+      <div class="relative process-line reveal" style="transition-delay: 0.2s;">
+        <div class="flex gap-5 mb-7 relative">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-white flex items-center justify-center text-sm font-bold z-10 shadow-sm" style="border: 2px solid var(--accent-green); color: var(--accent-green);">1</div>
+          <div class="pt-1">
+            <h4 class="text-sm font-bold mb-1">公式LINEでご連絡</h4>
+            <p class="text-xs" style="color: var(--text-light);">「個別セッションを受けたいです」とメッセージをお送りください</p>
+          </div>
+        </div>
+
+        <div class="flex gap-5 mb-7 relative">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-white flex items-center justify-center text-sm font-bold z-10 shadow-sm" style="border: 2px solid var(--accent-green); color: var(--accent-green);">2</div>
+          <div class="pt-1">
+            <h4 class="text-sm font-bold mb-1">日程の調整</h4>
+            <p class="text-xs" style="color: var(--text-light);">ご都合の良い日時を一緒に決めます</p>
+          </div>
+        </div>
+
+        <div class="flex gap-5 mb-7 relative">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-white flex items-center justify-center text-sm font-bold z-10 shadow-sm" style="border: 2px solid var(--accent-green); color: var(--accent-green);">3</div>
+          <div class="pt-1">
+            <h4 class="text-sm font-bold mb-1">お支払い</h4>
+            <p class="text-xs" style="color: var(--text-light);">お支払い方法をご案内いたします</p>
+          </div>
+        </div>
+
+        <div class="flex gap-5 mb-7 relative">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-white flex items-center justify-center text-sm font-bold z-10 shadow-sm" style="border: 2px solid var(--accent-green); color: var(--accent-green);">4</div>
+          <div class="pt-1">
+            <h4 class="text-sm font-bold mb-1">セッション当日</h4>
+            <p class="text-xs" style="color: var(--text-light);">Google Meetで90分間、じっくりお話しします</p>
+          </div>
+        </div>
+
+        <div class="flex gap-5 relative">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-white flex items-center justify-center text-sm font-bold z-10 shadow-sm" style="border: 2px solid var(--accent-green); color: var(--accent-green);">5</div>
+          <div class="pt-1">
+            <h4 class="text-sm font-bold mb-1">チャットサポート開始</h4>
+            <p class="text-xs" style="color: var(--text-light);">セッション翌日から2週間、LINEでフォローします</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 料金 ====== -->
+  <section class="py-20 px-6" style="background: linear-gradient(180deg, var(--pink-beige) 0%, #F0F7F3 50%, var(--pink-beige) 100%);">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-8 reveal">
+        <span class="font-script text-3xl block mb-2" style="color: var(--accent-green);">Price</span>
+        <h2 class="text-2xl md:text-3xl font-serif font-bold">料金</h2>
+      </div>
+
+      <div class="glass-card p-8 md:p-10 reveal text-center" style="transition-delay: 0.2s; position: relative; overflow: hidden; border: 2px solid rgba(139,170,154,0.3);">
+        <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg, var(--accent-green-light), var(--accent-green), var(--accent-green-light));border-radius:28px 28px 0 0;"></div>
+
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-3xl" style="background: linear-gradient(135deg, var(--accent-green-light) 0%, #E8F0EB 100%);">💬</div>
+
+        <h3 class="text-xl font-serif font-bold mb-2">個別セッション</h3>
+        <p class="text-xs mb-4" style="color: var(--text-light);">90分セッション＋2週間チャットサポート</p>
+
+        <div class="flex items-baseline gap-1 justify-center mb-6">
+          <span class="text-lg font-bold" style="color: var(--accent-green);">¥</span>
+          <span class="text-4xl font-extrabold" style="color: var(--accent-green);">25,000</span>
+          <span class="text-sm" style="color: var(--text-muted);">（税込）</span>
+        </div>
+
+        <div class="text-left p-5 rounded-xl mb-6" style="background: linear-gradient(135deg, #F0F7F3 0%, var(--accent-green-light) 100%);">
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-start gap-2"><span style="color: var(--accent-green);">✓</span> 90分の個別セッション（Google Meet）</li>
+            <li class="flex items-start gap-2"><span style="color: var(--accent-green);">✓</span> この子に合った具体的な対応法＋行動プラン</li>
+            <li class="flex items-start gap-2"><span style="color: var(--accent-green);">✓</span> セッション後2週間のチャットサポート（回数無制限）</li>
+            <li class="flex items-start gap-2"><span style="color: var(--accent-green);">✓</span> 声かけの具体例・日常の仕組み化のアドバイス</li>
+          </ul>
+        </div>
+
+        <p class="text-xs leading-loose mb-6" style="color: var(--text-muted);">
+          ※ 鑑定（トリセツ）を受けた方が対象です（推奨）<br>
+          ※ 鑑定書をお持ちでない方もご相談いただけます<br>
+          ※ プラン内容は予告なく変更する場合がございます
+        </p>
+
+        <a href="https://lin.ee/YzQpj1P" target="_blank" class="inline-block w-full py-5 text-center rounded-2xl font-bold shadow-lg text-sm text-white btn-green">
+          LINEでセッションに申し込む
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== よくある質問 ====== -->
+  <section id="faq" class="py-20 px-6 bg-white">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <span class="font-script text-3xl block mb-2" style="color: var(--accent-green);">FAQ</span>
+        <h2 class="text-2xl md:text-3xl font-serif font-bold">よくある質問</h2>
+      </div>
+
+      <div class="space-y-4">
+
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-badge">Q</span>
+            <span>鑑定を受けていなくてもセッションは受けられますか？</span>
+            <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              はい、鑑定なしでもセッションをお受けいただくことは可能です。<br><br>
+              ただし、鑑定書（トリセツ）があると<strong style="color: var(--text-main);">お子さんの性質をベースにした具体的なアドバイス</strong>ができるため、より効果的なセッションになります。まずは鑑定を受けていただくことをおすすめしています。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-badge">Q</span>
+            <span>セッションはどのように行いますか？</span>
+            <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <strong style="color: var(--text-main);">Google Meet（オンライン）</strong>で行います。<br><br>
+              お子さんがお昼寝中やお預け中など、90分間ゆっくりお話しできるタイミングでご参加いただくのがおすすめです。スマホからでもご参加いただけます。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-badge">Q</span>
+            <span>子どもと一緒にいても受けられますか？</span>
+            <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              3歳くらいまでの小さなお子さんであれば、一緒にいていただいても大丈夫です。<br><br>
+              ただ、セッションは言わば<strong style="color: var(--text-main);">"作戦会議"</strong>なので、お話の内容をしっかり理解できる年齢のお子さんには席を外してもらう方がいいですね。<br><br>
+              できればママおひとりでご参加いただく方が集中してセッションができるので望ましいです。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-badge">Q</span>
+            <span>チャットサポートでは何を聞いても大丈夫ですか？</span>
+            <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              はい、<strong style="color: var(--text-main);">お子さんの困りごとや日々の迷い</strong>など、何でもお気軽にご相談ください。回数の制限はありません。<br><br>
+              「今日こんなことがあったのですが、どう対応すればよかったですか？」「声かけを変えてみたら、こんな反応でした！」など、<strong style="color: var(--text-main);">実践報告も大歓迎</strong>です。<br><br>
+              <span style="font-size: 0.8rem;">※ 時間帯によっては即時返信が難しい場合がございます。基本的に24時間以内にお返事いたします。</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-badge">Q</span>
+            <span>お支払い方法は何がありますか？</span>
+            <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              お支払い方法は、お申し込み後にLINEにてご案内いたします。<br><br>
+              ご不明な点があればお気軽にLINEでお問い合わせください。
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA ====== -->
+  <section class="py-20 px-6" style="background: var(--pink-beige);">
+    <div class="max-w-2xl mx-auto">
+      <div class="glass-card p-10 md:p-12 text-center reveal" style="position: relative; overflow: hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg, var(--accent-green-light), var(--accent-green), var(--accent-green-light));border-radius:28px 28px 0 0;"></div>
+
+        <h3 class="text-lg font-serif font-bold mb-4">まずはLINEでお気軽にご相談ください</h3>
+        <p class="text-sm leading-loose mb-6" style="color: var(--text-light);">
+          「セッションに興味があります」<br>
+          「こんな悩みでも大丈夫ですか？」<br>
+          など、どんな小さなことでもお気軽にどうぞ。
+        </p>
+
+        <a href="https://lin.ee/YzQpj1P" target="_blank" class="inline-block px-10 py-4 rounded-full btn-green font-bold text-sm shadow-xl mb-6">
+          公式LINEでお問い合わせ
+        </a>
+
+        <div class="pt-6 border-t" style="border-color: var(--border);">
+          <p class="text-xs mb-3" style="color: var(--text-muted);">鑑定（トリセツ）がまだの方はこちら</p>
+          <a href="menu_simple.html" class="inline-block px-8 py-3 rounded-full bg-white border font-bold text-xs shadow-sm hover:bg-pink-50 transition-all" style="border-color: var(--primary-light); color: var(--text-main);">
+            メニューページを見る
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Footer ====== -->
+  <footer class="pt-20 pb-12 px-6 overflow-hidden relative" style="background: var(--pink-beige);">
+    <div class="max-w-3xl mx-auto text-center relative z-10">
+      <h2 class="text-xl md:text-3xl font-serif italic mb-12 reveal leading-snug">
+        ママが変われば、子どもが変わる。<br>
+        子どもを知れば、ママがラクになる。
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 reveal">
+        <a href="https://lin.ee/YzQpj1P" target="_blank" class="group p-8 rounded-[36px] border bg-green-50/20 hover:bg-green-50 transition-all text-left shadow-sm" style="border-color: var(--accent-green-light);">
+          <div class="flex justify-between items-center mb-4">
+            <span class="text-base font-bold font-serif">セッションについて相談</span>
+            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center group-hover:translate-x-2 transition-transform shadow-md">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </div>
+          </div>
+          <p class="text-xs" style="color: var(--text-muted);">公式LINEからお気軽にご相談ください。</p>
+        </a>
+        <a href="menu_simple.html" class="group p-8 rounded-[36px] border bg-pink-50/20 hover:bg-pink-50 transition-all text-left shadow-sm" style="border-color: var(--primary-light);">
+          <div class="flex justify-between items-center mb-4">
+            <span class="text-base font-bold font-serif">鑑定メニューを見る</span>
+            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center group-hover:translate-x-2 transition-transform shadow-md">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </div>
+          </div>
+          <p class="text-xs" style="color: var(--text-muted);">まずは鑑定（トリセツ）から始めたい方はこちら。</p>
+        </a>
+      </div>
+
+      <div class="pt-12 border-t flex flex-col md:flex-row justify-between items-center gap-8" style="border-color: var(--border);">
+        <div class="text-left">
+          <a href="menu_simple.html" class="text-xl font-serif font-bold tracking-tight" style="color: var(--deep-lavender); text-decoration: none;">うのちゃん</a>
+          <p class="text-[10px] tracking-[0.3em] mt-1 uppercase opacity-40 font-bold">Nature Reading for Kids & Moms</p>
+        </div>
+        <p class="text-[10px] opacity-30 tracking-widest font-bold uppercase">&copy; 2025 うのちゃん All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====== Scripts ====== -->
+  <script>
+    // Intersection Observer for animations
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, observerOptions);
+    document.querySelectorAll('.reveal, .stagger-item').forEach(el => observer.observe(el));
+
+    // FAQ アコーディオン
+    function toggleFaq(el) {
+      const item = el.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      if (!wasOpen) {
+        item.classList.add('open');
+      } else {
+        item.classList.remove('open');
+      }
+    }
+
+    // Mobile Menu
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    mobileBtn.addEventListener('click', () => {
+      const nav = document.querySelector('nav');
+      nav.classList.toggle('hidden');
+      nav.classList.toggle('flex');
+      nav.classList.toggle('flex-col');
+      nav.classList.toggle('absolute');
+      nav.classList.toggle('top-full');
+      nav.classList.toggle('left-0');
+      nav.classList.toggle('w-full');
+      nav.classList.toggle('bg-white');
+      nav.classList.toggle('p-8');
+      nav.classList.toggle('shadow-2xl');
+    });
+  </script>
+
+</body>
+</html>
